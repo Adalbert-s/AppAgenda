@@ -4,8 +4,11 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 import com.example.appagenda.model.Agenda;
 import com.example.appagenda.model.Usuario;
+import com.example.appagenda.model.EntryFragment;
+import com.example.appagenda.model.ViewFragment;
 import com.example.appagenda.R;
 
 public class MainActivity extends AppCompatActivity {
@@ -25,6 +28,8 @@ public class MainActivity extends AppCompatActivity {
         // Ligação com os elementos da interface
         EditText inputNome = findViewById(R.id.inputNome);
         Button btnAdicionarCompromisso = findViewById(R.id.btnAdicionarCompromisso);
+        Button btnVerCompromissos = findViewById(R.id.btnVerCompromissos);
+        Button btnNovoCompromisso = findViewById(R.id.btnNovoCompromisso);
 
         // Exemplo de evento de clique para o botão
         btnAdicionarCompromisso.setOnClickListener(view -> {
@@ -32,5 +37,16 @@ public class MainActivity extends AppCompatActivity {
             usuario.setNome(nomeUsuario);
             // Aqui você pode adicionar mais lógica para compromissos
         });
+
+        btnVerCompromissos.setOnClickListener(v -> showFragment(new ViewFragment()));
+        btnNovoCompromisso.setOnClickListener(v -> showFragment(new EntryFragment()));
     }
+
+    private void showFragment(Fragment fragment) {
+        getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.fragmentContainer, fragment)
+                .commit();
+    }
+
 }
