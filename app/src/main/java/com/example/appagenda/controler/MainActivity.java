@@ -28,8 +28,6 @@ public class MainActivity extends AppCompatActivity {
         // Ligação com os elementos da interface
         EditText inputNome = findViewById(R.id.inputNome);
         Button btnAdicionarCompromisso = findViewById(R.id.btnAdicionarCompromisso);
-        Button btnVerCompromissos = findViewById(R.id.btnVerCompromissos);
-        Button btnNovoCompromisso = findViewById(R.id.btnNovoCompromisso);
 
         // Exemplo de evento de clique para o botão
         btnAdicionarCompromisso.setOnClickListener(view -> {
@@ -38,14 +36,16 @@ public class MainActivity extends AppCompatActivity {
             // Aqui você pode adicionar mais lógica para compromissos
         });
 
-        btnVerCompromissos.setOnClickListener(v -> showFragment(new ViewFragment()));
-        btnNovoCompromisso.setOnClickListener(v -> showFragment(new EntryFragment()));
+
+        showFragment(new EntryFragment(), R.id.fragmentContainer1);
+        showFragment(new ViewFragment(), R.id.fragmentContainer2);
+
     }
 
-    private void showFragment(Fragment fragment) {
+    private void showFragment(Fragment fragment, int containerId) {
         getSupportFragmentManager()
                 .beginTransaction()
-                .replace(R.id.fragmentContainer, fragment)
+                .replace(containerId, fragment)
                 .commit();
     }
 

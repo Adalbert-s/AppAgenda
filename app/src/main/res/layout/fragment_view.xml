@@ -50,15 +50,16 @@
                 android:id="@+id/textViewScrollable"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Aqui terá a
+                android:textAlignment="gravity"
+                android:text="19:00 Jantar de Negócios
+
+                Aqui terá a
 
                 lista de compromissos
 
                 em uma determinada data
 
-                no formato
-
-                hora:descrição do compromisso
+                no formato hora:descrição do compromisso
 
                 testando
 
@@ -70,13 +71,12 @@
 
                 rolagem
 
-
                    :)
 
                     ;)
 
                     ;D"
-                android:textSize="16sp" />
+                android:textSize="28dp" />
 
         </ScrollView>
 
