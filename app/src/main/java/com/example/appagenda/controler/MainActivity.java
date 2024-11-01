@@ -1,7 +1,6 @@
 package com.example.appagenda.controler;
 
 import android.os.Bundle;
-import android.widget.Button;
 import android.widget.EditText;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
@@ -19,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main); // O arquivo XML associado
+        setContentView(R.layout.activity_main);
 
         // Inicializando os objetos
         agenda = new Agenda();
@@ -27,15 +26,6 @@ public class MainActivity extends AppCompatActivity {
 
         // Ligação com os elementos da interface
         EditText inputNome = findViewById(R.id.inputNome);
-        Button btnAdicionarCompromisso = findViewById(R.id.btnAdicionarCompromisso);
-
-        // Exemplo de evento de clique para o botão
-        btnAdicionarCompromisso.setOnClickListener(view -> {
-            String nomeUsuario = inputNome.getText().toString();
-            usuario.setNome(nomeUsuario);
-            // Aqui você pode adicionar mais lógica para compromissos
-        });
-
 
         showFragment(new EntryFragment(), R.id.fragmentContainer1);
         showFragment(new ViewFragment(), R.id.fragmentContainer2);

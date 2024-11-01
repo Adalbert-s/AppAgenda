@@ -51,31 +51,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAlignment="gravity"
-                android:text="19:00 Jantar de Negócios
-
-                Aqui terá a
-
-                lista de compromissos
-
-                em uma determinada data
-
-                no formato hora:descrição do compromisso
-
-                testando
-
-                a
-
-                área
-
-                de
-
-                rolagem
-
-                   :)
-
-                    ;)
-
-                    ;D"
+                android:text="Caixa para exibição dos compromissos salvos"
                 android:textSize="28dp" />
 
         </ScrollView>

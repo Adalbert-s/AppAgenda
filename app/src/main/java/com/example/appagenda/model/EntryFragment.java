@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -34,13 +35,13 @@ public class EntryFragment extends Fragment {
         editTextDescription = view.findViewById(R.id.editTextDescription);
         Button buttonOk = view.findViewById(R.id.buttonOk);
 
-        // Configura o botão de data
+        // Configuracao do botão de data
         buttonDate.setOnClickListener(v -> showDatePicker());
 
-        // Configura o botão de hora
+        // Configuracao do botão de hora
         buttonTime.setOnClickListener(v -> showTimePicker());
 
-        // Configura o botão "Ok" para salvar o compromisso
+        // Configuracao do botão ok
         buttonOk.setOnClickListener(v -> saveAppointment());
 
         return view;
@@ -74,8 +75,7 @@ public class EntryFragment extends Fragment {
         if (TextUtils.isEmpty(description) || date == null || time == null) {
             Toast.makeText(getActivity(), "Por favor, preencha todos os campos!", Toast.LENGTH_SHORT).show();
         } else {
-            // Aqui você pode adicionar a lógica para salvar o compromisso
-            Toast.makeText(getActivity(), "Compromisso salvo: " + time + " - " + description + " em " + date, Toast.LENGTH_SHORT).show();
+            Log.d("SaveAppointment", "Compromisso salvo em: Data = " + date + ", Hora = " + time + ", Descrição = " + description);
             // Limpar os campos após o salvamento
             editTextDescription.setText("");
             date = null;

@@ -31,10 +31,10 @@ public class ViewFragment extends Fragment {
         Button botaoOutroDia = view.findViewById(R.id.buttonOutroDia);
         textViewScrollable = view.findViewById(R.id.textViewScrollable);
 
-        // Configura o botão "Hoje" para exibir compromissos do dia atual
+        // Configuracao do botão hoje para exibir compromissos do dia atual
         botaoHoje.setOnClickListener(v -> showTodayAppointments());
 
-        // Configura o botão "Outro Dia" para selecionar uma data
+        // Configuracao do botão outro dia para selecionar uma data
         botaoOutroDia.setOnClickListener(v -> showDatePicker());
 
         return view;
@@ -61,8 +61,8 @@ public class ViewFragment extends Fragment {
     }
 
     private void showAppointmentsForDate(String date) {
-        // Exemplo de exibição de compromissos para a data selecionada (teste)
-        textViewScrollable.setText("Compromissos para " + date + ":\n10:00 - Check-up médico\n12:00 - Almoço com equipe\n16:00 - Revisão de orçamento");
+        // Exibição de compromissos para a data selecionada (teste)
+        textViewScrollable.setText("Compromissos para dia " + date + ":\n10:00 - Check-up médico\n12:00 - Almoço com equipe\n16:00 - Revisão de orçamento");
         Toast.makeText(getActivity(), "Data selecionada: " + date, Toast.LENGTH_SHORT).show();
     }
 }
